@@ -25,6 +25,7 @@ public class Conta {
             cadastro = new Cadastro(numconta, nome, initialDeposit);
         } else {
             cadastro = new Cadastro(numconta, nome);
+            break;
         }
 
         System.out.println();
