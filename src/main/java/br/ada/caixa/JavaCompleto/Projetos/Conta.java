@@ -6,10 +6,8 @@ import java.util.Scanner;
 
 public class Conta {
     public static void main(String[] args) {
-
-//        Locale.setDefault(Locale.US); Decidi deixar em R$
         Scanner sc = new Scanner(System.in);
-        Cadastro cadastro;
+        Cadastro cadastro = null;
 
         System.out.println("Bem-vindo a CEF! Vamos abrir sua conta! Informe o número da Conta: ");
         int numconta = sc.nextInt();
@@ -19,34 +17,64 @@ public class Conta {
         System.out.println("Desejar realizar Depósito inicial? (s/n)");
         char response = sc.next().charAt(0);
 
-        if( response == 's' ) {
+        if (response == 's') {
             System.out.println("Depósito Inicial: ");
             double initialDeposit = sc.nextDouble();
             cadastro = new Cadastro(numconta, nome, initialDeposit);
         } else {
             cadastro = new Cadastro(numconta, nome);
-            break;
         }
 
         System.out.println();
-        System.out.println("Conta aberta com sucesso de nº ");
-        System.out.println(cadastro);
+        System.out.println("Conta aberta com sucesso de nº " + numconta + " no nome de " + nome);
 
-        System.out.println();
-        System.out.println("Realizar depósito: ");
-        double valorDeposito = sc.nextDouble();
-        cadastro.deposit(valorDeposito);
-        System.out.println("Saldo da conta: ");
-        System.out.println(cadastro);
+        boolean continuar = true;
+        while (continuar) {
+            System.out.println();
+            System.out.println("Escolha a operação: ");
+            System.out.println("1. Realizar depósito");
+            System.out.println("2. Realizar saque");
+            System.out.println("3. Consultar saldo");
+            System.out.println("4. Sair");
+            int operacao = sc.nextInt();
 
-        System.out.println();
-        System.out.println("Realizar saque: ");
-        double valorSaque = sc.nextDouble();
-        cadastro.saque(valorSaque);
-        System.out.println("Saldo da conta: ");
-        System.out.println(cadastro);
+            switch (operacao) {
+                case 1:
+                    System.out.println("Valor do depósito: ");
+                    double valorDeposito = sc.nextDouble();
+                    cadastro.deposit(valorDeposito);
+                    System.out.println("Saldo da conta: ");
+                    System.out.println(cadastro);
+                    break;
+                case 2:
+                    System.out.println("Valor do saque: ");
+                    double valorSaque = sc.nextDouble();
+                    cadastro.saque(valorSaque);
+                    System.out.println("Saldo da conta: ");
+                    System.out.println(cadastro);
+                    break;
+                case 3:
+                    System.out.println("Saldo da conta: ");
+                    System.out.println(cadastro);
+                    break;
+                case 4:
+                    continuar = false;
+                    System.out.println("Operação encerrada. Obrigado por usar nosso serviço!");
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+                    break;
+            }
 
-//        Cadastro.nome = "Matteo"; Testando se o nome e a conta alteram
-
+            if (continuar) {
+                System.out.println("Deseja realizar outra operação? (s/n)");
+                char novaOperacao = sc.next().charAt(0);
+                if (novaOperacao == 'n') {
+                    continuar = false;
+                    System.out.println("Operação encerrada. Obrigado por usar nosso serviço!");
+                }
+            }
+        }
     }
 }
+
