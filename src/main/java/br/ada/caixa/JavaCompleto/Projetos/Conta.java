@@ -26,7 +26,9 @@ public class Conta {
         }
 
         System.out.println();
-        System.out.println("Conta aberta com sucesso de nº " + numconta + " no nome de " + nome);
+        System.out.println(cadastro);
+        //System.out.println("Conta aberta com sucesso de nº " + numconta + " no nome de " + nome);
+
 
         boolean continuar = true;
         while (continuar) {
