@@ -61,7 +61,7 @@ public class Conta {
                     break;
                 case 4:
                     continuar = false;
-                    System.out.println("Operação encerrada. Obrigado por usar nosso serviço!");
+                    System.out.println("Operação encerrada. Obrigado por usar nossos serviços!");
                     break;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
