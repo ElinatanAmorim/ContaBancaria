@@ -13,7 +13,7 @@ public class Product {
         this.quantity = quantity;
     }
     public Product(String name, double price){
-        this.name = name;  //O this serve para dif o atributo do objeto do parâmetro do construtor
+        this.name = name;
         this.price = price;
     }
     public double totalValorEstoque () {
