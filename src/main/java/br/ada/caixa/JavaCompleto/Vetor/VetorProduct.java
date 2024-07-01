@@ -33,13 +33,3 @@ public class VetorProduct {
         return soma / vect.length;
     }
 }
-
-
-/*
-  double soma= 0.0;
-        for(int i=0; i < vect.length ; i++){
-            soma += vect[i].getPrice();
-        }
-        double avg = soma / vect.length;
-
- */

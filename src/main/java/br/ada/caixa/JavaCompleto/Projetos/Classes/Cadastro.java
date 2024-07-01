@@ -1,5 +1,7 @@
 package br.ada.caixa.JavaCompleto.Projetos.Classes;
 
+import br.ada.caixa.JavaCompleto.Vetor.Exercicios.Altura.ProgramAltura;
+
 public class Cadastro {
 
     private int numconta; //Inicialmente tinha feito assim - final public int numconta;

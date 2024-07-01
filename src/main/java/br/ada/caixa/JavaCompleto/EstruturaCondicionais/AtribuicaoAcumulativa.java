@@ -10,6 +10,7 @@ public class AtribuicaoAcumulativa {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        System.out.print("Valor dos minutos: ");
         int minutos = sc.nextInt();
         double conta = 50;
 

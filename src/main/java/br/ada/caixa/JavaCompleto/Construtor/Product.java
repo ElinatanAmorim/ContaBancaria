@@ -17,13 +17,16 @@ public class Product {
         this.price = price;
     }
     public double totalValorEstoque () {
+
         return price * quantity;
     }
     public void addProduto (int qtd) {
-        this.quantity += qtd;
+
+        quantity += qtd;
     }
     public void removeProduto(int qtd) {
-        this.quantity -= qtd;
+
+        quantity -= qtd;
     }
     public String toString(){
         return name
@@ -34,5 +37,4 @@ public class Product {
                 + " unidades, Total: $ "
                 + String.format("%.2f", totalValorEstoque());
     }
-
 }
